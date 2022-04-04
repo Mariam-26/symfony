@@ -53,3 +53,4 @@ Composer sert à instaler les différents composants, pr exemple, si on vt insta
 6. `php bin/console male:migration` qui enregistre les changements dans un fichier dans le dossier Migrations
 7. `php bin/console doctrine:migrations:migrate` qui envoie ls changements ds la BDD
 8. Pour lancer un server local : `php -S localhost:8000 -t public`
+9. Pour créer des controllers
