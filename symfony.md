@@ -42,6 +42,14 @@ Composer sert à instaler les différents composants, pr exemple, si on vt insta
 
 - composer.json : le fichier qui va être utile à Composer pr maramétrer ls paquets
 
+## TWIG
+
+- Twig est une nouvelle façon de faire du HTML
+  
+- Ce langage va ns permettre non slmt d'afficher du contenu grâce aux balises HTML que l'on connait ms aussi de redéfinir du contenu grâce à ds blocks : `{% block body%} {% endblock %}`
+
+- On étendra tjrs notre page depuis la page *base.html.twig* => normalemt fait automatiquemt
+
 ## INSTALATION
 
 1. Instalation de Composer
@@ -53,4 +61,7 @@ Composer sert à instaler les différents composants, pr exemple, si on vt insta
 6. `php bin/console male:migration` qui enregistre les changements dans un fichier dans le dossier Migrations
 7. `php bin/console doctrine:migrations:migrate` qui envoie ls changements ds la BDD
 8. Pour lancer un server local : `php -S localhost:8000 -t public`
-9. Pour créer des controllers
+9. Pour créer des controllers qui permettront de lancer ds vues et définir ce qu'on y affiche on utilisera la cde `php bin/conle make:controller NomController`
+10. Cette commande créera deux fichiers : 
+    1. Le controller ds lequel on pourra définir la route ms aussi le chemin d'accès au fichier en Twig
+    2. Le template twig qu'on pourra personnaliser selon nos besoins 
