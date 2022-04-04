@@ -50,6 +50,11 @@ Composer sert à instaler les différents composants, pr exemple, si on vt insta
 
 - On étendra tjrs notre page depuis la page *base.html.twig* => normalemt fait automatiquemt
 
+- Twig permet aussi, outre le extends de faire ds include. Pr ex, on verra commt faire une en-tête et la mettre ds certains fichiers grâce à cette fonction
+
+- On pourra égalemt appeler des valiables et ainsi, récupérer ds infos derectement depuis la BDD 
+- Lorsque l'on vt afficher ds images, il faudra utiliser la fonction asset ds l'attribut src de ntre image de  la façon suivante : `{{ asset'img/1.jpg'}}`. Il faudra tjrs placer le dossier img ds le dossier public
+
 ## INSTALATION
 
 1. Instalation de Composer
