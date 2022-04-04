@@ -41,3 +41,15 @@ Composer sert à instaler les différents composants, pr exemple, si on vt insta
 - .env : fichier de configuration pr ntre environnemt (connexion à la BDD pr exemple)
 
 - composer.json : le fichier qui va être utile à Composer pr maramétrer ls paquets
+
+## INSTALATION
+
+1. Instalation de Composer
+
+2. Instalation de notre symfony grâce à  `composer create-project symfony/website-skeleton nomProjet`
+3. Customistion du fichier .env avec nos identifiants et le nom de notre BDD
+4. `php bin/console doctrine:database:create` qui va envoyer notre nouvelle BDD vers phpMyAdmin
+5. `php bin/console make:entityNomtable` qui va perttre de créer la table de notre BDD 
+6. `php bin/console male:migration` qui enregistre les changements dans un fichier dans le dossier Migrations
+7. `php bin/console doctrine:migrations:migrate` qui envoie ls changements ds la BDD
+8. Pour lancer un server local : `php -S localhost:8000 -t public`
