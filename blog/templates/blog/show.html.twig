@@ -1,13 +1,33 @@
 {% extends 'base.html.twig' %} {% block title %}Blog - {{ article.title }} {% endblock %} {% block body %}
 <div class="p-5 bg-light">
-    <div class="container">
-        <h1 class="display-3">{{ article.title }}</h1>
-        <p class="lead">{{ article.author }}</p>
-        <p class="lead">{{article.createdAt | date('d-m-Y')}}</p>
+    <div class="container row">
+        <figure class="text-center w-25 h-25 m-3">
+            <img src="{{ article.image }}" alt="Illutration de l'article {{ article.title }}" class="img-fluid" />
+        </figure>
+        <div>
+            <h1 class="display-3">{{ article.title }}</h1>
+            <p class="lead">{{ article.author }}</p>
+            <p class="lead">{{article.createdAt | date('d-m-Y')}}</p>
 
-        <a href=" {{ path('app_blog') }} " class="btn btn-primary">Retour aux articles</a
-    >
-    <!-- Pr trouver le nom de notre page, il suffit d'aller sur le Controller correspondant et ds la ligne de la route et regarder à l'endroit : name="nomRoute" -->
+            <a href=" {{ path('app_blog') }} " class="btn btn-primary">Retour aux articles</a
+      >
+      <!-- Pr trouver le nom de notre page, il suffit d'aller sur le Controller correspondant et ds la ligne de la route et regarder à l'endroit : name="nomRoute" -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <!-- Le mot raw signifie que le PHP dt lire ls balises et non ps les traiter comme du texte -->
+      <figure class="text-center">
+        <img
+          src="{{ article.image }}"
+          alt="Illutration de l'article {{ article.title }}"
+          class="img-fluid"
+        />
+      </figure>
+    </div>
   </div>
 </div>
 
