@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajourter un article{% endblock %}
+
+{% block body %}
+.<div class="p-5 bg-light">
+  <div class="container">
+    <h1 class="display-3">Blog de Mariam</h1>
+    <p class="lead">
+    {% if modeEdit %}
+    Modifier un article
+    {% else %}
+    Ajouter un article
+    {% endif %}
+    </p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="p-5 shadow rounded">
+{{ form_start(form)}}
+{{ form_end(form)}}
+
+</div>
+
+</div>
+{% endblock %}
