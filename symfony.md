@@ -62,11 +62,16 @@ Composer sert à instaler les différents composants, pr exemple, si on vt insta
 2. Instalation de notre symfony grâce à  `composer create-project symfony/website-skeleton nomProjet`
 3. Customistion du fichier .env avec nos identifiants et le nom de notre BDD
 4. `php bin/console doctrine:database:create` qui va envoyer notre nouvelle BDD vers phpMyAdmin
-5. `php bin/console make:entityNomtable` qui va perttre de créer la table de notre BDD 
-6. `php bin/console male:migration` qui enregistre les changements dans un fichier dans le dossier Migrations
-7. `php bin/console doctrine:migrations:migrate` qui envoie ls changements ds la BDD
-8. Pour lancer un server local : `php -S localhost:8000 -t public`
-9. Pour créer des controllers qui permettront de lancer ds vues et définir ce qu'on y affiche on utilisera la cde `php bin/conle make:controller NomController`
-10. Cette commande créera deux fichiers : 
+5. `php bin/console make:entity Nomtable` qui va perttre de créer la table de notre BDD 
+6. NB ENTRER LES DIFFERENTS CHAMPS
+7. `php bin/console make:migration` qui enregistre les changements dans un fichier dans le dossier Migrations
+8. `php bin/console doctrine:migrations:migrate` qui envoie ls changements ds la BDD
+9. Pour lancer un server local : `php -S localhost:8000 -t public`
+10. Pour créer des controllers qui permettront de lancer ds vues et définir ce qu'on y affiche on utilisera la cde `[php bin/console make:controller NomController](http://localhost:8000)`
+11. Cette commande créera deux fichiers : 
     1. Le controller ds lequel on pourra définir la route ms aussi le chemin d'accès au fichier en Twig
     2. Le template twig qu'on pourra personnaliser selon nos besoins 
+
+POUR INSERRER UN CONTENU
+<p class="card-text">{{article.content | striptags | slice(0,70)}} ...</p>
+{{ article.content | raw}}
