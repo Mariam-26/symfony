@@ -1,5 +1,7 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    # SYMFONY DOC -> TIWG à la ligne 3 et on colle sur tiwg.yam -> à la ligne 3 : c'est pour le formulaire
+    form_themes: ['bootstrap_5_layout.html.twig']
 
 when@test:
     twig:
