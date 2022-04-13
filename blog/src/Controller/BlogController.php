@@ -22,7 +22,7 @@ class BlogController extends AbstractController
     // - findAll() correspond à un SELECT *
     // -findBy() correspond à uun SELECT avec ds options
 
-    $article = $repo->findBy(array(), array('createdAt' => 'desc'));
+    $article = $repo->findBy(array(), array('createdAt' => 'DESC'));
     // équivalent SQL = SELECT * FROM articles ORDER BY created DESC * fetchAll
 
 
@@ -37,7 +37,7 @@ class BlogController extends AbstractController
     /* CECI EST UN COMMENTAIRE // une annotation prendra 2 étoiles aprèd le  premier slash et elle sera analysé par notre navigation */
 
     /**
-     * @Route("/blog/show/{id} ", name="show")
+     * @Route("/blog/show/{id}", name="show")
      */
 
      public function show(Articles $article): Response
@@ -49,7 +49,7 @@ class BlogController extends AbstractController
 
      /**
       * @Route("/blog/new", name="new")
-      * @Route("/blog/edit/(id", name="edit")
+      * @Route("/blog/edit/{id}", name="edit")
       */
 
       public function create(Articles $articleNew = null, Request $requete, EntityManagerInterface $manager) : Response
@@ -87,3 +87,13 @@ class BlogController extends AbstractController
         ]);
       }
 }
+
+
+
+
+
+
+
+
+
+
