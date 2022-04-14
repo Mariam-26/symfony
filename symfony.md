@@ -5,7 +5,7 @@
 5. `php bin/console make:entity Nomtable` qui va permettre de créer la table de notre BDD
 6. `php bin/console make:migration`qui enregistre les changements dans un fichier dans le dossier Migrations
 7. `php bin/console doctrine:migrations:migrate`qui envoie les changements dans la BDD
-8.Pour lancer un serveur local , se rendre sur commander de mysql: `php -S localhost:8000 -t public`
+8. Pour lancer un serveur local , se rendre sur commander de mysql: `php -S localhost:8000 -t public`
 9. Pour créer des controllers qyu permettront de lancer des vues et définir ce qu'on y affiche on utilisera la commande `php bin/console make:controller NomController`
 10. Cette commande créera deux fichiers :
     1.Le controller dans lequel on pourra définir la route mais aussi le chemin d'accès au fichier en Twig
