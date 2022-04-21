@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Blog - Page des articles{% endblock %} 
+{% block body %} .
+<div class="p-5 bg-light">
+    <div class="container">
+        <h1 class="display-3">Blog de Mariam</h1>
+        <p class="lead">Pages des articles</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for article in items %}
+        <div class="col-12 col-md-6">
+            <div class="card text-start">
+                <img class="card-img-top" src="{{article.image}}" alt="Illustration de l'article {{article.title}}">
+                <div class="card-body">
+                    <h4 class="card-title">{{article.title}}</h4>
+                    <p class="card-text">{{article.content |striptags|slice(0,70) ~'...'}}</p>
+                    <!--  
+                        Pr concatenner en twig, on utilisera le title (altgr * 2) "~" (ou vague A NR PZD UTILISER) -->
+                    <!-- Pr ajouter ds fonctions prédefinies on ajoutera le pipe (altgr + 6) "|" (ou barre verticale) -->
+                    <a href="{{path('show',{'id':article.id}) }}" class="btn btn-dark">VOIR</a>
+                    <a href="{{path('edit', {'id':article.id}) }}" class="btn btn-dark">MODIFIER</a> 
+                </div>
+                <div class="card-footer">
+                    <p>{{article.author}}</p>
+                    <p>{{article.createdAt | date('d-m-Y')}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
