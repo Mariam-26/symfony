@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos recettes{% endblock %}
+
+{% block body %}
+    <h1 class="display-3 text-center p-5 text-uppercase">Nos recettes</h1>
+
+   <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Origine</th>
+                    <th>Catégories</th>
+                    <th>Recette</th>
+                    <th>Image</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for food in food %}
+                <tr>
+                    <td>{{ food.id }}</td>
+                    <td>{{ food.nom }}</td>
+                    <td>{{ food.origine }}</td>
+                    <td>{{ food.categories }}</td>
+                    <td>{{ food.recette }}</td>
+                    <td><img src="{{ food.image }}" alt="FOOD" class="img-fluid"></td>
+                    <td>
+                        <a href="{{ path('app_food_show', {'id': food.id}) }}" class="btn btn-primary">show</a>
+                        <a href="{{ path('app_food_edit', {'id': food.id}) }}" class="btn btn-warning">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucune recette trouvée</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center p-3">
+            <a href="{{ path('app_food_new') }}" class="btn btn-success radius">Nouvelle recette</a>
+        </div>
+   </div>
+
+{% endblock %}
