@@ -5,7 +5,7 @@
 5. `php bin/console make:entity Nomtable` qui va permettre de créer la table de notre BDD
 6. `php bin/console make:migration`qui enregistre les changements dans un fichier dans le dossier Migrations
 7. `php bin/console doctrine:migrations:migrate`qui envoie les changements dans la BDD
-8. Pour créer des controllers qyu permettront de lancer des vues et définir ce qu'on y affiche on utilisera la commande `php bin/console make:controller NomController`
+8. Pour créer des controllers qui permettront de lancer des vues et définir ce qu'on y affiche on utilisera la commande `php bin/console make:controller NomController`
 9. Pour lancer un serveur local , se rendre sur commander de mysql: `php -S localhost:8000 -t public`
 10. Cette commande créera deux fichiers :
     1.Le controller dans lequel on pourra définir la route mais aussi le chemin d'accès au fichier en Twig
@@ -30,6 +30,11 @@
 21. RegistrationController
 22. RegistrationFormType => il faudra faire bien attention à mettre ts ls champs pr l'inscription SANS l'id et le rôle // Pr un site de prod, il faudra penser à ajouter ls conditions d'Utilisation
 23. Register.html.twig ds templates/registration
+24. ATTENTTION suite à ds problèmes avec lz version 2.12 de ORM il faut des modififications ds le fichier COMPOSER.JSON
+
+    1. A la ligne 13 :  ``"doctrine/orm": "^2.11",``
+    2. A la ligne 97, rajouter  ``"doctrine/orm": "2.12.0"``
+    3. Enfin ds le terminal, faire la ligne de commande `composer update` et vous pouver maintenant faire une entité
 POUR INSERRER UN CONTENU
 <p class="card-text">{{article.content | striptags | slice(0,70)}} ...</p>
 {{ article.content | raw}}
